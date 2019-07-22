@@ -1,0 +1,11 @@
+
+dependencies {
+
+	//skywalking dependency
+	compileOnly "org.apache.skywalking:apm-agent-core:$version_skywalking"
+    compileOnly "org.apache.skywalking:apm-util:$version_skywalking"
+
+    //skywalking test
+    testImplementation "org.apache.skywalking:apm-test-tools:$version_skywalking"
+
+}
