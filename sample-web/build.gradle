@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+group project_group_id
+version project_version
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+[compileJava, compileTestJava, javadoc]*.options*.encoding = "UTF-8"
+
+jar {
+    version = project_version
+    manifest {
+        attributes  "Manifest-Version": 1.0,
+                    'Main-Class': main_class
+    }
+}
+
+springBoot {
+    mainClassName = main_class
+}
+
+dependencies {
+    
+    compile "ch.qos.logback:logback-classic:$version_logback"
+    compile "org.slf4j:jcl-over-slf4j:$version_slf4j"
+    compile "org.springframework.boot:spring-boot-starter-web:$version_spring_boot"
+    compile "org.springframework.boot:spring-boot-starter-aop:$version_spring_boot"
+    compile "org.springframework.boot:spring-boot-starter-actuator:$version_spring_boot"
+    compile ("com.github.shepherdviolet:slate-http-client:$version_slate") {exclude group: 'org.springframework'}
+    compile "net.bytebuddy:byte-buddy:1.9.2"
+    
+
+    //annotationProcessor//////////////////////////////////////////////////////////////////////////////
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:$version_spring_boot"
+
+    //Test//////////////////////////////////////////////////////////////////////////////
+
+//    testImplementation "org.springframework.boot:spring-boot-starter-test:$version_spring_boot"
+
+}

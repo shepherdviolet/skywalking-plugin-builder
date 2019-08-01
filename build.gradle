@@ -10,6 +10,8 @@ buildscript {
 
     //构建脚本依赖
     dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$version_spring_boot")
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.1.0"
     }
 
 }

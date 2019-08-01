@@ -1,0 +1,4 @@
+sample=sample.RpcConsumerInstrumentation
+sample=sample.RpcProviderInstrumentation
+sample=sample.AsyncServiceInstrumentation
+sample=sample.AsyncServiceInner1Instrumentation

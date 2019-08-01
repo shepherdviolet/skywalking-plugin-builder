@@ -1,11 +1,23 @@
 
+apply plugin: "com.github.johnrengelman.shadow"
+
+shadowJar {
+    /**
+     * 重要!!!
+     * SkyWalking的核心包(apm-agent-core)依赖的byte-buddy是标准版的, 包路径是net.bytebuddy....
+     * 而实际运行时, skywalking-agent.jar中的byte-buddy包路径被调整了, 在org.apache.skywalking.apm.dependencies.net.bytebuddy,
+     * 查看官方源码, 发现官方使用maven-shade-plugin进行了relocation操作, 即在打包时将包路径替换了.
+     */
+    relocate 'net.bytebuddy', 'org.apache.skywalking.apm.dependencies.net.bytebuddy'
+}
+
 dependencies {
 
-	//skywalking dependency
+	//skywalking依赖, Provided方式, 不要打包到插件中!
 	compileOnly "org.apache.skywalking:apm-agent-core:$version_skywalking"
     compileOnly "org.apache.skywalking:apm-util:$version_skywalking"
 
-    //skywalking test
+    //skywalking测试依赖
     testImplementation "org.apache.skywalking:apm-test-tools:$version_skywalking"
 
 }
