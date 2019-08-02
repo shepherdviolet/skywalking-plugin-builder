@@ -42,7 +42,8 @@ public class RpcProviderInterceptor implements InstanceMethodsAroundInterceptor 
         //创建EntrySpan
         AbstractSpan span = ContextManager.createEntrySpan(
                 //操作名称, 即在SW界面上显示的信息
-                "Provider:sample.basic.rpcmock.ProviderService#invoke",
+//                "Provider:sample.basic.rpcmock.ProviderService#invoke",
+                "Provider:ProviderService#invoke",
                 //ContextCarrier
                 contextCarrier
         );

@@ -33,7 +33,10 @@ public class AsyncServiceInterceptor implements InstanceMethodsAroundInterceptor
     public void beforeMethod(EnhancedInstance objInst, Method method, Object[] allArguments, Class<?>[] argumentsTypes, MethodInterceptResult result) throws Throwable {
 
         //创建本地SPAN
-        AbstractSpan span = ContextManager.createLocalSpan("sample.basic.asyncmock.AsyncService#invoke(Map, Runnable)");
+        AbstractSpan span = ContextManager.createLocalSpan(
+//                "sample.basic.asyncmock.AsyncService#invoke(Map, Runnable)"
+                "AsyncService#invoke(Map, Runnable)"
+        );
         //必要: 组件定义, 这个光这里配置其实不够, 还要在SW的服务端配置对应信息, 否则只会看到Undefined
         span.setComponent(new OfficialComponent(1792, "SampleAsync"));
 

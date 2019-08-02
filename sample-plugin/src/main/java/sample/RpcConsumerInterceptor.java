@@ -33,7 +33,8 @@ public class RpcConsumerInterceptor implements InstanceMethodsAroundInterceptor 
         //创建ExitSpan, 同时会将追踪信息写入contextCarrier
         AbstractSpan span = ContextManager.createExitSpan(
                 //操作名称, 即在SW界面上显示的信息
-                "Consumer:sample.basic.rpcmock.ProviderService#invoke",
+//                "Consumer:sample.basic.rpcmock.ProviderService#invoke",
+                "Consumer:ProviderService#invoke",
                 //ContextCarrier
                 contextCarrier,
                 //远端地址

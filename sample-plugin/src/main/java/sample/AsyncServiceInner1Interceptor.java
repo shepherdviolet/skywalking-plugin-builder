@@ -55,7 +55,10 @@ public class AsyncServiceInner1Interceptor implements InstanceMethodsAroundInter
         }
 
         //重要: 必须先创建本地Span, 不然Context没有会导致下面continued方法抛出空指针
-        AbstractSpan span = ContextManager.createLocalSpan("sample.basic.asyncmock.AsyncService$1#run()");
+        AbstractSpan span = ContextManager.createLocalSpan(
+//                "sample.basic.asyncmock.AsyncService$1#run()"
+                "AsyncService$1#run()"
+        );
         //必要: 组件定义, 这个光这里配置其实不够, 还要在SW的服务端配置对应信息, 否则只会看到Undefined
         span.setComponent(new OfficialComponent(1792, "SampleAsync"));
 
