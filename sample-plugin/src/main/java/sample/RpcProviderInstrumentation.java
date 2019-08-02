@@ -20,6 +20,8 @@ package sample;
 
 import net.bytebuddy.description.method.MethodDescription;
 import net.bytebuddy.matcher.ElementMatcher;
+import org.apache.skywalking.apm.agent.core.logging.api.ILog;
+import org.apache.skywalking.apm.agent.core.logging.api.LogManager;
 import org.apache.skywalking.apm.agent.core.plugin.interceptor.ConstructorInterceptPoint;
 import org.apache.skywalking.apm.agent.core.plugin.interceptor.InstanceMethodsInterceptPoint;
 import org.apache.skywalking.apm.agent.core.plugin.interceptor.enhance.ClassInstanceMethodsEnhancePluginDefine;
@@ -34,6 +36,8 @@ import static net.bytebuddy.matcher.ElementMatchers.named;
  * @author S.Violet
  */
 public class RpcProviderInstrumentation extends ClassInstanceMethodsEnhancePluginDefine {
+
+    private static final ILog logger = LogManager.getLogger(RpcProviderInstrumentation.class);
 
     private static final String ENHANCE_CLASS = "sample.basic.rpcmock.ProviderService";
     private static final String INTERCEPT_CLASS = "sample.RpcProviderInterceptor";

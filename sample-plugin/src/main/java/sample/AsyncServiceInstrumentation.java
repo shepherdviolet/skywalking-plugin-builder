@@ -30,6 +30,11 @@ import org.apache.skywalking.apm.agent.core.plugin.match.NameMatch;
 
 import static net.bytebuddy.matcher.ElementMatchers.named;
 
+/**
+ * 异步追踪示例
+ *
+ * @author S.Violet
+ */
 public class AsyncServiceInstrumentation extends ClassInstanceMethodsEnhancePluginDefine {
 
     private static final ILog logger = LogManager.getLogger(AsyncServiceInstrumentation.class);
