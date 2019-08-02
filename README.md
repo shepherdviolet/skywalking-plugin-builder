@@ -12,7 +12,7 @@
 
 # 编译构建
 
-* 编译: `gradlew shadowJar`
+* 编译: `gradlew clean shadowJar`
 * 提取: `sample-plugin/build/libs/sample-plugin-1.0-all.jar`, 放到SkyWalking Agent的`plugins`目录下
 
 # 被监控应用启动参数
