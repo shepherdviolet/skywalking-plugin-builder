@@ -9,6 +9,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
+/**
+ * RPC中间逻辑模拟
+ *
+ * @author S.Violet
+ */
 @Component
 public class RpcPipeLine {
 
@@ -18,6 +23,7 @@ public class RpcPipeLine {
     private ProviderService service;
 
     public Map<String, Object> invoke(Map<String, Object> request) {
+        //用异步模拟RPC调用
         Future<Map<String, Object>> future = threadPool.submit(() -> service.invoke(request));
         try {
             return future.get();

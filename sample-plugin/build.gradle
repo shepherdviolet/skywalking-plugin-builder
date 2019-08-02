@@ -13,7 +13,7 @@ shadowJar {
 
 dependencies {
 
-	//skywalking依赖, Provided方式, 不要打包到插件中!
+	//skywalking依赖, Provided方式, 不要打包到插件中!!!
 	compileOnly "org.apache.skywalking:apm-agent-core:$version_skywalking"
     compileOnly "org.apache.skywalking:apm-util:$version_skywalking"
 

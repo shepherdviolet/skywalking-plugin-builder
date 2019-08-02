@@ -28,6 +28,11 @@ import org.apache.skywalking.apm.agent.core.plugin.match.NameMatch;
 
 import static net.bytebuddy.matcher.ElementMatchers.named;
 
+/**
+ * RPC追踪示例
+ *
+ * @author S.Violet
+ */
 public class RpcConsumerInstrumentation extends ClassInstanceMethodsEnhancePluginDefine {
 
     private static final String ENHANCE_CLASS = "sample.basic.rpcmock.ConsumerService";

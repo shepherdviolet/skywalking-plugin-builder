@@ -29,8 +29,6 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-aop:$version_spring_boot"
     compile "org.springframework.boot:spring-boot-starter-actuator:$version_spring_boot"
     compile ("com.github.shepherdviolet:slate-http-client:$version_slate") {exclude group: 'org.springframework'}
-    compile "net.bytebuddy:byte-buddy:1.9.2"
-    
 
     //annotationProcessor//////////////////////////////////////////////////////////////////////////////
 
@@ -38,6 +36,6 @@ dependencies {
 
     //Test//////////////////////////////////////////////////////////////////////////////
 
-//    testImplementation "org.springframework.boot:spring-boot-starter-test:$version_spring_boot"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$version_spring_boot"
 
 }

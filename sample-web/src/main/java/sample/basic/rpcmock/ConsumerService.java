@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+/**
+ * 被侵入的RPC消费方示例(模拟)
+ *
+ * @author S.Violet
+ */
 @Component
 public class ConsumerService {
 

@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 被侵入的RPC服务方示例(模拟)
+ *
+ * @author S.Violet
+ */
 @Component
 public class ProviderService {
 
@@ -15,7 +20,7 @@ public class ProviderService {
     public Map<String, Object> invoke(Map<String, Object> request) {
         logger.info("provider entry, request:" + request);
         try {
-            Thread.sleep(1000L);
+            Thread.sleep(500L);
         } catch (InterruptedException ignored) {
         }
         logger.info("provider exit");
