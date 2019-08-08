@@ -59,6 +59,8 @@ public class RpcProviderInstrumentation extends ClassInstanceMethodsEnhancePlugi
                 @Override
                 public ElementMatcher<MethodDescription> getMethodsMatcher() {
                     return named("invoke");
+//                    return named("invoke")
+//                            .and(takesArguments(Map.class, String.class));
                 }
 
                 @Override

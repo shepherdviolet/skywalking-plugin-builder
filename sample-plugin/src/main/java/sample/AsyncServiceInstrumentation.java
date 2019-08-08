@@ -59,6 +59,8 @@ public class AsyncServiceInstrumentation extends ClassInstanceMethodsEnhancePlug
                 @Override
                 public ElementMatcher<MethodDescription> getMethodsMatcher() {
                     return named("invoke");
+//                    return named("invoke")
+//                            .and(takesArguments(Map.class, String.class));
                 }
 
                 @Override

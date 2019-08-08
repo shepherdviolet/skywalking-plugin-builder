@@ -58,6 +58,8 @@ public class AsyncServiceInner1Instrumentation extends ClassInstanceMethodsEnhan
                 @Override
                 public ElementMatcher<MethodDescription> getMethodsMatcher() {
                     return named("run");
+//                    return named("invoke")
+//                            .and(takesArguments(Map.class, String.class));
                 }
 
                 @Override
