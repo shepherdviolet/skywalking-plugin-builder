@@ -29,6 +29,7 @@ import org.apache.skywalking.apm.agent.core.plugin.match.ClassMatch;
 import org.apache.skywalking.apm.agent.core.plugin.match.NameMatch;
 
 import static net.bytebuddy.matcher.ElementMatchers.named;
+
 /**
  * 异步追踪示例
  *
@@ -59,7 +60,8 @@ public class AsyncServiceInner1Instrumentation extends ClassInstanceMethodsEnhan
                 public ElementMatcher<MethodDescription> getMethodsMatcher() {
                     return named("run");
 //                    return named("invoke")
-//                            .and(takesArguments(Map.class, String.class));
+//                            .and(takesArgumentWithType(0, "java.util.Map"));
+//                    return nameStartsWith("set");
                 }
 
                 @Override

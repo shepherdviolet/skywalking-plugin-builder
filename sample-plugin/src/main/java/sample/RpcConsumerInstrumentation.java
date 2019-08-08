@@ -60,7 +60,8 @@ public class RpcConsumerInstrumentation extends ClassInstanceMethodsEnhancePlugi
                 public ElementMatcher<MethodDescription> getMethodsMatcher() {
                     return named("invoke");
 //                    return named("invoke")
-//                            .and(takesArguments(Map.class, String.class));
+//                            .and(takesArgumentWithType(0, "java.util.Map"));
+//                    return nameStartsWith("set");
                 }
 
                 @Override
