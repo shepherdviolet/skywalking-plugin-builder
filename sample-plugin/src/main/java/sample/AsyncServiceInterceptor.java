@@ -52,7 +52,9 @@ public class AsyncServiceInterceptor implements InstanceMethodsAroundInterceptor
     @Override
     public Object afterMethod(EnhancedInstance objInst, Method method, Object[] allArguments, Class<?>[] argumentsTypes, Object ret) throws Throwable {
         //结束当前SPAN, 这里其实没结束, 因为之前做了span.prepareForAsync()
-        ContextManager.stopSpan();
+        if (ContextManager.isActive()) {
+            ContextManager.stopSpan();
+        }
         /*
             如果需要, 还可以在这里处理异常的情况
          */

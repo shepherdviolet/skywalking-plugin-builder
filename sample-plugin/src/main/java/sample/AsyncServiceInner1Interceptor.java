@@ -74,7 +74,9 @@ public class AsyncServiceInner1Interceptor implements InstanceMethodsAroundInter
     @Override
     public Object afterMethod(EnhancedInstance objInst, Method method, Object[] allArguments, Class<?>[] argumentsTypes, Object ret) throws Throwable {
         //结束当前SPAN
-        ContextManager.stopSpan();
+        if (ContextManager.isActive()) {
+            ContextManager.stopSpan();
+        }
         /*
             如果需要, 还可以在这里处理异常的情况
          */
