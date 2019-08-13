@@ -54,6 +54,9 @@ public class RpcProviderInterceptor implements InstanceMethodsAroundInterceptor 
         Tags.URL.set(span, "my-protocol://remote-host:8080/sample.basic.rpcmock.ProviderService#invoke(Map)");
         //RPC插件需要这个: 标记为RPC
         SpanLayer.asRPCFramework(span);
+
+        //可选: 将SW追踪号塞入MAP
+        arg0.put("_sw_trace_id", ContextManager.getGlobalTraceId());
     }
 
     @Override
