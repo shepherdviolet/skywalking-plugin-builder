@@ -61,10 +61,11 @@ public class RpcProviderInterceptor implements InstanceMethodsAroundInterceptor 
 
     @Override
     public Object afterMethod(EnhancedInstance objInst, Method method, Object[] allArguments, Class<?>[] argumentsTypes, Object ret) throws Throwable {
-        //结束当前SPAN
-        if (ContextManager.isActive()) {
-            ContextManager.stopSpan();
-        }
+        /*
+            结束当前SPAN.
+            注意, 如果beforeMethod中不一定创建SPAN的话, 这里也不要用ContextManager.isActive()判断是否关闭, 这会意外把外层SPAN关闭掉!
+         */
+        ContextManager.stopSpan();
         /*
             如果需要, 还可以在这里处理异常的情况
          */
