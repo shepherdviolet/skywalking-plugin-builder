@@ -44,7 +44,14 @@ public class RpcConsumerInstrumentation extends ClassInstanceMethodsEnhancePlugi
 
     @Override
     protected ClassMatch enhanceClass() {
+        //返回null不侵入, 可以用来实现判断某个类B是否存在, 不存在就不侵入类A
+//        if (...) {
+//            return null;
+//        }
+        //侵入单个类
         return NameMatch.byName(ENHANCE_CLASS);
+        //侵入多个类
+//        return MultiClassNameMatch.byMultiClassMatch(CLASS1, CLASS2);
     }
 
     @Override
