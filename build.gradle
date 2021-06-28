@@ -5,13 +5,13 @@ buildscript {
     //构建脚本依赖仓库
     repositories {
         mavenCentral()
-        jcenter()
+        maven { url 'https://plugins.gradle.org/m2/' }
     }
 
     //构建脚本依赖
     dependencies {
-        //重要: 打包插件 这个在jcenter(其实在https://repo.spring.io/plugins-release/)
-        classpath "com.github.jengelman.gradle.plugins:shadow:5.1.0"
+        //重要: 打包插件
+        classpath "com.github.jengelman.gradle.plugins:shadow:5.2.0"
         //Spring Boot 插件
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$version_spring_boot")
     }
@@ -35,7 +35,6 @@ allprojects {
     repositories {
         maven {url repository_localRepositoryPath}
         mavenCentral()
-        jcenter()
     }
     
 }

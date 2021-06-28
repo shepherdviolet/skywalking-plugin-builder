@@ -9,26 +9,26 @@ targetCompatibility = 1.8
 
 [compileJava, compileTestJava, javadoc]*.options*.encoding = "UTF-8"
 
-jar {
-    version = project_version
-    manifest {
-        attributes  "Manifest-Version": 1.0,
-                    'Main-Class': main_class
-    }
-}
+//jar {
+//    version = project_version
+//    manifest {
+//        attributes  "Manifest-Version": 1.0,
+//                    'Main-Class': main_class
+//    }
+//}
 
-springBoot {
+bootJar {
     mainClassName = main_class
 }
 
 dependencies {
     
-    compile "ch.qos.logback:logback-classic:$version_logback"
-    compile "org.slf4j:jcl-over-slf4j:$version_slf4j"
-    compile "org.springframework.boot:spring-boot-starter-web:$version_spring_boot"
-    compile "org.springframework.boot:spring-boot-starter-aop:$version_spring_boot"
-    compile "org.springframework.boot:spring-boot-starter-actuator:$version_spring_boot"
-    compile ("com.github.shepherdviolet:slate-http-client:$version_slate") {exclude group: 'org.springframework'}
+    implementation "ch.qos.logback:logback-classic:$version_logback"
+    implementation "org.slf4j:jcl-over-slf4j:$version_slf4j"
+    implementation "org.springframework.boot:spring-boot-starter-web:$version_spring_boot"
+    implementation "org.springframework.boot:spring-boot-starter-aop:$version_spring_boot"
+    implementation "org.springframework.boot:spring-boot-starter-actuator:$version_spring_boot"
+    implementation ("com.github.shepherdviolet:slate-http-client:$version_slate") {exclude group: 'org.springframework'}
 
     //annotationProcessor//////////////////////////////////////////////////////////////////////////////
 
