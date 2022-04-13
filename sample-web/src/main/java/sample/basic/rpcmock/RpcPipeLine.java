@@ -1,8 +1,8 @@
 package sample.basic.rpcmock;
 
+import com.github.shepherdviolet.glacimon.java.concurrent.ThreadPoolExecutorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sviolet.thistle.util.concurrent.ThreadPoolExecutorUtils;
 
 import java.util.Map;
 import java.util.concurrent.ExecutionException;

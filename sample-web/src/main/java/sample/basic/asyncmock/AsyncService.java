@@ -1,9 +1,9 @@
 package sample.basic.asyncmock;
 
+import com.github.shepherdviolet.glacimon.java.concurrent.ThreadPoolExecutorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import sviolet.thistle.util.concurrent.ThreadPoolExecutorUtils;
 
 import java.util.Map;
 import java.util.concurrent.ExecutorService;

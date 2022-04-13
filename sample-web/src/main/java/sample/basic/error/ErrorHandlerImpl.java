@@ -1,5 +1,6 @@
 package sample.basic.error;
 
+import com.github.shepherdviolet.glacimon.java.x.trace.Trace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
-import sviolet.thistle.x.util.trace.Trace;
 import sample.basic.entity.RejectException;
 
 import javax.servlet.http.HttpServletRequest;

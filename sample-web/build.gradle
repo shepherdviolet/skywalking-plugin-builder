@@ -28,7 +28,8 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web:$version_spring_boot"
     implementation "org.springframework.boot:spring-boot-starter-aop:$version_spring_boot"
     implementation "org.springframework.boot:spring-boot-starter-actuator:$version_spring_boot"
-    implementation ("com.github.shepherdviolet:slate-http-client:$version_slate") {exclude group: 'org.springframework'}
+    implementation ("com.github.shepherdviolet.glacimon:glacispring-httpclient:$version_glacimon") {exclude group: 'org.springframework'}
+    implementation "com.github.shepherdviolet.glacimon:glacijava-trace:$version_glacimon"
 
     //annotationProcessor//////////////////////////////////////////////////////////////////////////////
 

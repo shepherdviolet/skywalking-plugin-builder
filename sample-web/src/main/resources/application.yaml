@@ -19,8 +19,7 @@ spring:
 
 #####################################################################
 
-## Slate config
-slate:
+glacispring:
   common:
     servlet-context-listener-enabled: true
 #  httpclient:

@@ -1,11 +1,11 @@
 package sample.basic.config;
 
+import com.github.shepherdviolet.glacimon.spring.x.monitor.txtimer.def.EnableTxTimerSpringConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import sviolet.slate.common.x.monitor.txtimer.def.EnableTxTimerSpringConfig;
 import sample.basic.interceptor.BasicHandlerInterceptor;
 
 /**

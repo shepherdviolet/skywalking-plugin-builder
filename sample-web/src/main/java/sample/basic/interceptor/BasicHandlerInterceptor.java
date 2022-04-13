@@ -1,11 +1,11 @@
 package sample.basic.interceptor;
 
+import com.github.shepherdviolet.glacimon.java.x.trace.Trace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-import sviolet.thistle.x.util.trace.Trace;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
